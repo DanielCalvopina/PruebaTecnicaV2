@@ -1,0 +1,18 @@
+{
+  "/productos-api": {
+    "target": "http://localhost:5242",
+    "secure": false,
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/productos-api": ""
+    }
+  },
+  "/transacciones-api": {
+    "target": "http://localhost:5172",
+    "secure": false,
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/transacciones-api": ""
+    }
+  }
+}

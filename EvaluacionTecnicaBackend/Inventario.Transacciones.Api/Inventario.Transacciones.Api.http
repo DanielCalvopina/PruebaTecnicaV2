@@ -1,0 +1,23 @@
+@Inventario.Transacciones.Api_HostAddress = http://localhost:5172
+@ProductoId = 00000000-0000-0000-0000-000000000000
+
+GET {{Inventario.Transacciones.Api_HostAddress}}/api/transacciones?pagina=1&tamanoPagina=10
+Accept: application/json
+
+###
+
+POST {{Inventario.Transacciones.Api_HostAddress}}/api/transacciones
+Content-Type: application/json
+
+{
+  "tipo": "Compra",
+  "productoId": "{{ProductoId}}",
+  "cantidad": 3,
+  "precioUnitario": 180000,
+  "detalle": "Compra inicial"
+}
+
+###
+
+GET {{Inventario.Transacciones.Api_HostAddress}}/api/transacciones?productoId={{ProductoId}}&tipo=Compra
+Accept: application/json

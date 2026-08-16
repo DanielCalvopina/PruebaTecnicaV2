@@ -1,0 +1,29 @@
+@Inventario.Productos.Api_HostAddress = http://localhost:5242
+@ProductoId = 00000000-0000-0000-0000-000000000000
+
+GET {{Inventario.Productos.Api_HostAddress}}/api/productos?pagina=1&tamanoPagina=10
+Accept: application/json
+
+###
+
+POST {{Inventario.Productos.Api_HostAddress}}/api/productos
+Content-Type: application/json
+
+{
+  "nombre": "Teclado mecanico",
+  "descripcion": "Teclado compacto para oficina",
+  "categoria": "Tecnologia",
+  "imagen": "https://example.com/teclado.jpg",
+  "precio": 180000,
+  "stock": 15
+}
+
+###
+
+PATCH {{Inventario.Productos.Api_HostAddress}}/api/productos/{{ProductoId}}/stock
+Content-Type: application/json
+
+{
+  "cantidad": 5,
+  "detalle": "Ajuste manual"
+}
